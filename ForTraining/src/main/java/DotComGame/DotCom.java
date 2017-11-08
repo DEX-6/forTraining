@@ -1,9 +1,10 @@
 package DotComGame;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DotCom {
-    private ArrayList<String> locationCells;
+    private List<String> locationCells;
     private String name;
     //    private int[] locationCells;
 //    private int numOfHits = 0;
@@ -40,7 +41,7 @@ public class DotCom {
         return result;
     }
 
-    public void setLocationCells(ArrayList<String> loc) {
+    public void setLocationCells(List<String> loc) {
         locationCells = loc;
     }
     public void setName(String name){
