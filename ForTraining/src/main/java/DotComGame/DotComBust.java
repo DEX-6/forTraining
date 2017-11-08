@@ -9,11 +9,14 @@ public class DotComBust {
     int numOfGuesses = 0;
 
     public static void main(String[] args) {
+        DotComBust game = new DotComBust();
+        game.setUpGame();
+        game.startPaying();
 
-        int randomNam = (int) (Math.random() * 5);
-        int[] locations = {randomNam, randomNam + 1, randomNam + 2};
+//        int randomNam = (int) (Math.random() * 5);
+//        int[] locations = {randomNam, randomNam + 1, randomNam + 2};
 //        theDotCom.setLocationCells(locations);
-        boolean isAlive = true;
+//        boolean isAlive = true;
 
 //        while (isAlive) {
 //            String guess = helper.getUserInput("Введите число");
@@ -27,10 +30,10 @@ public class DotComBust {
     }
 
     /* *
-    * Метод предназначен для создания объектов DotCom и присвоения им имен и адресов.
+    * Метод предназначен для создания обьектов DotCom и присвоения им имен и адресов.
     * Устанавливает местоположение обьекта DotCom
     */
-    void setUpGame(List<DotCom> dotComList) {
+    void setUpGame() {
         DotCom vk = new DotCom();
         vk.setName("vk.com");
         DotCom mail = new DotCom();
@@ -42,36 +45,63 @@ public class DotComBust {
         dotComList.add(mail);
         dotComList.add(yandex);
 
-        for (DotCom dc : dotComList) {
+        System.out.println("Ваша цель потопить три сайта");
+        System.out.println("vk.com, mail.ru, yandex.ru");
+        System.out.println("Попытайтесь потопить их за минимальное количество ходов");
+
+        for (DotCom dotComToSet : dotComList) {
 //            Вызываем впомогательный метод PlaceDotCom() из вспомогательного класса, чтобы получить
 //            случайно выбранное местоположение для сайта
-
+            List<String> newLocation = helper.placeDotCom(3);
 //            Устанавливаем местоположение для каждого сайта
+            dotComToSet.setLocationCells(newLocation);
         }
     }
 
     /**
      * Метод запрашивает у пользователя ход и вызывает метод checkUserGuesses(),
-     * пока все объекты DotCom не выведены из игры
+     * пока все обьекты DotCom не выведены из игры
      */
 
-    void atartPaying() {
-
+    void startPaying() {
+        while (!dotComList.isEmpty()) {
+            String userGuess = helper.getUserInput("Сделайте ход");
+            checkUserGuesses(userGuess);
+        }
+        finishGame();
     }
 
     /**
-     * Метод, который просматривает все остальные объекты DotCom и
+     * Метод, который просматривает все остальные обьекты DotCom и
      * вызывает каждый обьект DotMom метода checkYourself()
      */
-    void checkUserGuesses() {
+    void checkUserGuesses(String userGuess) {
+        numOfGuesses++;
+        String result = "Мимо";
+        for (DotCom dotComToTest : dotComList) {
+            result = dotComToTest.checkYourself(userGuess);
+            if (result.equals("Попал")) {
+                break;
+            }
 
+            if (result.equals("Потопил")) {
+                dotComList.remove(dotComToTest);
+                break;
+            }
+        }
     }
 
     /**
      * Метод, который выводит на экран сообщение об успехах пользователя, основывавясь на том,
-     * за сколько ходов тот потопил все объекты DotCom
+     * за сколько ходов тот потопил все обьекты DotCom
      */
     void finishGame() {
+        System.out.println("Все сайты ушли ко дну!");
+        if (numOfGuesses <= 18) {
+            System.out.println("Это заняло всего " + numOfGuesses + " попыток!");
+        } else {
+            System.out.println("Это заняло довольно много времени. " + numOfGuesses + " попыток.");
+        }
     }
 
 

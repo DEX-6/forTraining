@@ -32,6 +32,7 @@ public class DotCom {
             locationCells.remove(index);
             if (locationCells.isEmpty()) {
                 result = "Потопил";
+                System.out.println("Вы потопили " + name);
             } else {
                 result = "Попал";
             }
