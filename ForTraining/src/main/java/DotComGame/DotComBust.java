@@ -12,7 +12,7 @@ public class DotComBust {
 
         int randomNam = (int) (Math.random() * 5);
         int[] locations = {randomNam, randomNam + 1, randomNam + 2};
-        theDotCom.setLocationCells(locations);
+//        theDotCom.setLocationCells(locations);
         boolean isAlive = true;
 
 //        while (isAlive) {
@@ -43,7 +43,10 @@ public class DotComBust {
         dotComList.add(yandex);
 
         for (DotCom dc : dotComList) {
+//            Вызываем впомогательный метод PlaceDotCom() из вспомогательного класса, чтобы получить
+//            случайно выбранное местоположение для сайта
 
+//            Устанавливаем местоположение для каждого сайта
         }
     }
 
