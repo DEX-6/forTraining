@@ -89,6 +89,7 @@ public class DotComBust {
                 break;
             }
         }
+        System.out.println(result);
     }
 
     /**

@@ -6,27 +6,9 @@ import java.util.List;
 public class DotCom {
     private List<String> locationCells;
     private String name;
-    //    private int[] locationCells;
-//    private int numOfHits = 0;
-//    private String result;
 
     public String checkYourself(String userInput) {
         String result = "Мимо";
-//        int guess = Integer.parseInt(StringGuess);
-//        for (int cell : locationCells) {
-//            if (guess == cell) {
-//                result = "Попал";
-//                numOfHits++;
-//                break;
-//            } else result = "Мимо";
-//        }
-
-//        if (numOfHits == locationCells.length) {
-//            result = "Потопил";
-//        }
-//        System.out.println(result);
-//        return result;
-
         int index = locationCells.indexOf(userInput);
         if (index >= 0) {
             locationCells.remove(index);
@@ -36,9 +18,10 @@ public class DotCom {
             } else {
                 result = "Попал";
             }
-        } else {
-            result = "Мимо";
         }
+//        else {
+//            result = "Мимо";
+//        }
         return result;
     }
 
