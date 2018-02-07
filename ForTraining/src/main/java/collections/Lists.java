@@ -6,6 +6,7 @@ import java.util.List;
 public class Lists {
     public static void main(String[] args) {
         List<List<String>> list = new ArrayList<>();
+        List <Integer> intList = new ArrayList<>();
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         List<String> list3 = new ArrayList<>();
@@ -27,5 +28,8 @@ public class Lists {
 
 
         System.out.println(list1.containsAll(list3));
+
+
+        intList.add(1);
     }
 }
