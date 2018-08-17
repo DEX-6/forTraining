@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7288b9-6e75-4798-80f5-62f9677e7ab7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/forTraining_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/forTraining_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -813,7 +813,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534432475117</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавление зависимостей xmlUnit">
+      <created>1534516115309</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534516115310</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -894,7 +901,8 @@
     <MESSAGE value="все поседние изменения" />
     <MESSAGE value="все последние изменения" />
     <MESSAGE value="Добавление зависимости mockito" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление зависимости mockito" />
+    <MESSAGE value="Добавление зависимостей xmlUnit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление зависимостей xmlUnit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
