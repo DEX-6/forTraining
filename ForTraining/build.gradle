@@ -15,5 +15,10 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-core', version: '5.0.4.RELEASE'
 // https://mvnrepository.com/artifact/org.mockito/mockito-core
     testCompile group: 'org.mockito', name: 'mockito-core', version: '2.19.0'
+    // https://mvnrepository.com/artifact/org.xmlunit/xmlunit-matchers
+    testCompile group: 'org.xmlunit', name: 'xmlunit-matchers', version: '2.6.0'
+// https://mvnrepository.com/artifact/org.xmlunit/xmlunit-core
+    testCompile group: 'org.xmlunit', name: 'xmlunit-core', version: '2.6.0'
+
 
 }
