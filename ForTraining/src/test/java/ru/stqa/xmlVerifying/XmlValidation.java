@@ -56,18 +56,18 @@ public class XmlValidation {
                 .checkForIdentical()
                 .checkForSimilar()
                 .withComparisonController(ComparisonControllers.Default)
-//                .withNodeMatcher(
-//                        new DefaultNodeMatcher
-//                                (ElementSelectors.conditionalBuilder()
-//                                     //  "Когда находим элемент tr С наследником th
-//                                     // сравниваем tr по названию элементов и тексту"
-//                                        .whenElementIsNamed("tr")
-//                                        .thenUse(ElementSelectors.byXPath("./th", byNameAndText))
-//                                        .elseUse(byName).build()
-//                                )
-//                )
+                .withNodeMatcher(
+                        new DefaultNodeMatcher
+                                (ElementSelectors.conditionalBuilder()
+                                     //  "Когда находим элемент tr С наследником th
+                                     // сравниваем tr по названию элементов и тексту"
+                                        .whenElementIsNamed("tr")
+                                        .thenUse(ElementSelectors.byXPath("./th", byNameAndText))
+                                        .elseUse(byName).build()
+                                )
+                )
                 .withNodeFilter(
-                        node -> (node.getNodeName().equals("b"))
+                        node -> !(node.getTextContent().equals("0"))
                 )
                 .build();
 
@@ -85,6 +85,8 @@ public class XmlValidation {
             System.out.println("CONTROL XPATH: " + diff.getComparison().getControlDetails().getXPath());
             System.out.println("TEST VALUE: " + diff.getComparison().getTestDetails().getValue());
             System.out.println("CONTROL VALUE: " + diff.getComparison().getControlDetails().getValue());
+            System.out.println("TEST TEXT CONTENT:" + diff.getComparison().getTestDetails().getTarget().getTextContent());
+//            System.out.println("CONTROL TEXT CONTENT:" + diff.getComparison().getControlDetails().getTarget().getTextContent());
             System.out.println("---------------------------------------------------------------------");
         }
         System.out.println("Наличие различий " + myDiff.hasDifferences());
