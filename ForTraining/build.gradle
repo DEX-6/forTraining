@@ -16,9 +16,9 @@ dependencies {
 // https://mvnrepository.com/artifact/org.mockito/mockito-core
     compile group: 'org.mockito', name: 'mockito-core', version: '2.19.0'
     // https://mvnrepository.com/artifact/org.xmlunit/xmlunit-matchers
-    compile group: 'org.xmlunit', name: 'xmlunit-matchers', version: '2.6.0'
+    compile group: 'org.xmlunit', name: 'xmlunit-matchers', version: '2.6.2'
 // https://mvnrepository.com/artifact/org.xmlunit/xmlunit-core
-    testCompile group: 'org.xmlunit', name: 'xmlunit-core', version: '2.6.0'
+    testCompile group: 'org.xmlunit', name: 'xmlunit-core', version: '2.6.2'
     // https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest
     testCompile group: 'org.hamcrest', name: 'java-hamcrest', version: '2.0.0.0'
 }

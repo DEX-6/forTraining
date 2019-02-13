@@ -1,10 +1,8 @@
 package ru.stqa.xmlVerifying;
 
 import org.junit.Test;
-import org.w3c.dom.Node;
 import org.xmlunit.builder.DiffBuilder;
 import org.xmlunit.diff.*;
-import org.xmlunit.util.Predicate;
 
 import java.io.InputStream;
 
@@ -67,7 +65,7 @@ public class XmlValidation {
                                 )
                 )
                 .withNodeFilter(
-                        node -> !(node.getTextContent().equals("0"))
+                        (node) -> !(node.getTextContent().equals("0") && node.getLocalName().equals("tr"))
                 )
                 .build();
 
@@ -85,15 +83,17 @@ public class XmlValidation {
             System.out.println("CONTROL XPATH: " + diff.getComparison().getControlDetails().getXPath());
             System.out.println("TEST VALUE: " + diff.getComparison().getTestDetails().getValue());
             System.out.println("CONTROL VALUE: " + diff.getComparison().getControlDetails().getValue());
-            System.out.println("TEST TEXT CONTENT:" + diff.getComparison().getTestDetails().getTarget().getTextContent());
+//            System.out.println("TEST TEXT CONTENT:" + diff.getComparison().getTestDetails().getTarget().getTextContent());
 //            System.out.println("CONTROL TEXT CONTENT:" + diff.getComparison().getControlDetails().getTarget().getTextContent());
+//            System.out.println("TEST DFILTERED NODE LOCAL NAME (EXPECTED TR):"
+//            + diff.getComparison().getTestDetails().getTarget().getLocalName());
             System.out.println("---------------------------------------------------------------------");
         }
         System.out.println("Наличие различий " + myDiff.hasDifferences());
     }
 
     @Test
-    public void getDifferences() {
+    public void getDifferences()    {
         String controlXml = "<struct>" +
                 "<boolean>false</boolean>" +
                 "<int>4</int>" +
